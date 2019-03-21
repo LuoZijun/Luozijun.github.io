@@ -24,23 +24,23 @@
     </head>
 
     <body class="hack dark main container">
-        {% block content %}
-            {% block header %}
-                {% if config.extra.after_dark_menu %}
-                    <header>
-                        <nav itemscope itemtype="http://schema.org/SiteNavigationElement">
-                        {% for item in config.extra.after_dark_menu %}
-                            <a itemprop="url"
-                               class="{% if item.url | replace(from="$BASE_URL", to=config.base_url) == current_url %}active{% endif %}"
-                               href="{{ item.url | safe | replace(from="$BASE_URL", to=config.base_url) }}">
-                                <span itemprop="name">{{ item.name }}
-                                </span></a>
-                        {% endfor %}
-                        </nav>
-                    </header>
-                {% endif %}
-            {% endblock header %}
+        {% block header %}
+            {% if config.extra.after_dark_menu %}
+                <header>
+                    <nav itemscope itemtype="http://schema.org/SiteNavigationElement">
+                    {% for item in config.extra.after_dark_menu %}
+                        <a itemprop="url"
+                           class="{% if item.url | replace(from="$BASE_URL", to=config.base_url) == current_url %}active{% endif %}"
+                           href="{{ item.url | safe | replace(from="$BASE_URL", to=config.base_url) }}">
+                            <span itemprop="name">{{ item.name }}
+                            </span></a>
+                    {% endfor %}
+                    </nav>
+                </header>
+            {% endif %}
+        {% endblock header %}
 
+        {% block content %}
             <main style="margin-top: 16px;">
                 {% for page in paginator.pages %}
                     {{ post_macros::page_in_list(page=page) }}
