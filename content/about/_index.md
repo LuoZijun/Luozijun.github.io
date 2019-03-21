@@ -1,5 +1,5 @@
 +++
-title = "关于我"
+title = "关于我自己"
 date = 2019-03-21
 template = "about.html"
 paginate_by = 0
