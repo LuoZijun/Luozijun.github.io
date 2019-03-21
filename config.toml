@@ -1,0 +1,21 @@
+title = "寧靜的个人博客"
+base_url = "http://127.0.0.1:8000"
+default_language = "en"
+compile_sass = false
+highlight_code = true
+build_search_index = true
+theme = "after-dark"
+datetime = "%Y/%m/%d"
+taxonomies = [
+    {name = "blog", rss = true},
+    {name = "about", rss = true},
+]
+
+[extra]
+author = "寧靜"
+after_dark_menu = [
+    {url = "$BASE_URL", name = "Home"},
+    {url = "$BASE_URL/blog", name = "Blog"},
+    {url = "$BASE_URL/about", name = "About"},
+]
+after_dark_title = "寧靜的个人博客"
